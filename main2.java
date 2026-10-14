@@ -134,4 +134,15 @@ public class main2 {
         System.out.println("Отрицательных: " + neg);
         System.out.println("Нулей: " + zeros);
     }
+
+    public static void reversedArray() {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int[] nums = new int[n];
+    for (int i = 0; i < n; i++) {
+        nums[i] = sc.nextInt();
+    }
+
+
+    }
     }
