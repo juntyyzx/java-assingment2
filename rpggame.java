@@ -89,6 +89,12 @@ public class rpggame {
             System.out.println("health: " + hps[i]);
         }
         System.out.println("-------------");
+        if (bosshp == 0){
+            System.out.println("Heroes won!!");
+        }
+        if (hps[0] == 0){
+            System.out.println("Boss won!!");
+        }
     }
     
 
