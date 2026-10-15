@@ -1,7 +1,8 @@
 import java.util.Scanner;
 public class main2 {
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        posNegZeros();
+        cycleShift();
     }
     public static void nNums(int n){
         for (int i = 0; i <= n; i++ ) {
@@ -40,6 +41,7 @@ public class main2 {
             System.out.print(n % 10);
             n /= 10;
         }
+
     } 
     public static void simpleOrComp(int n){
         int c = 0;
@@ -65,7 +67,7 @@ public class main2 {
     System.out.println(x);
     }
     public static void sumAndMid() {
-        Scanner sc = new Scanner(System.in);
+        
         int n = sc.nextInt();
         int[] nums = new int[n];
         int sum = 0;
@@ -81,7 +83,7 @@ public class main2 {
     }
 
     public static void minAndMax() {
-        Scanner sc = new Scanner(System.in);
+        
         int n = sc.nextInt();
         int[] nums = new int[n];
 
@@ -110,7 +112,7 @@ public class main2 {
     }
 
     public static void posNegZeros(){
-        Scanner sc = new Scanner(System.in);
+        
         int n = sc.nextInt();
         int[] nums = new int[n];
         for (int i = 0; i < n; i++){
@@ -134,15 +136,54 @@ public class main2 {
         System.out.println("Отрицательных: " + neg);
         System.out.println("Нулей: " + zeros);
     }
-
-    public static void reversedArray() {
-    Scanner sc = new Scanner(System.in);
+    public static void reversedArray(){
+        
     int n = sc.nextInt();
     int[] nums = new int[n];
     for (int i = 0; i < n; i++) {
         nums[i] = sc.nextInt();
     }
+    for (int i = n - 1; i >= 0; i--) {
+        System.out.print(nums[i] + " ");
+    }
+    }
 
+    public static void negToZeros() {
+    
+    int n = sc.nextInt();
+    int[] nums = new int[n];
+    for (int i = 0; i < n; i++) {
+        nums[i] = sc.nextInt();
+    }
+    int c = 0;
+    for (int i = 0; i < n; i++){
+        if (nums[i] < 0) {
+            nums[i] = 0;
+            c += 1;
+            System.out.print(nums[i] + " ");
+        }
+        else {
+            System.out.print(nums[i] + " ");
+        }
+    }
+    System.out.println(" Заменено: " + c);
+    
+    }
+
+    public static void cycleShift(){
+        int n = sc.nextInt();
+        int[] nums = new int[n];
+        int[] nums2 = new int[n];
+        for (int i = 0; i < n; i++){
+            nums[i] = sc.nextInt();
+        }
+        
+        nums2[0] = nums[n-1];
+        System.out.print(nums2[0] + " ");
+        for (int i = 0; i < n-1; i++) {
+            nums2[i] = nums[i];
+            System.out.print(nums2[i] + " ");
+        }
 
     }
     }

@@ -59,16 +59,21 @@ public class rpggame {
     public static void heroesHit(){
         
         for (int i = 0; i < len; i++){
+            if (hps[i] <= 0) {
+                continue;
+            }
+
             if (type[i].equals(deftype)) {
                 continue;
             }
-            else {
-                if (i == luckyIndex) {
-                    int luckydmg = dmg[luckyIndex] * (random.nextInt(9) + 2);
-                    bosshp -= luckydmg;
-                    System.out.println(luckydmg);
+            if (i == luckyIndex) {
+                int luckydmg = dmg[luckyIndex] * (random.nextInt(9) + 2);
+                bosshp -= luckydmg;
+                System.out.println(type[luckyIndex] + " will hit " + luckydmg);
 
                 }
+            else {
+                bosshp -= dmg[i];
             }
             if (bosshp <= 0){
                 bosshp = 0;
