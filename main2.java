@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class main2 {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        cycleShift();
+        bubbleSort();
     }
     public static void nNums(int n){
         for (int i = 0; i <= n; i++ ) {
@@ -186,4 +186,29 @@ public class main2 {
         }
 
     }
+    public static void bubbleSort(){
+        int n = sc.nextInt();
+        int[] nums = new int[n];
+         for (int i = 0; i < n; i++){
+            nums[i] = sc.nextInt();
+            
+         }
+        for (int i = 0; i < n; i++)
+            {
+                
+            for (int j = 0; j < n - i - 1; j++){
+                if (nums[j] > nums[j + 1]) {
+                    int swap = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = swap;
+                }
+                if (nums[j] < nums[j + 1]) {
+                    continue; 
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print(nums[i] + " ");
+        }
+        }
     }
